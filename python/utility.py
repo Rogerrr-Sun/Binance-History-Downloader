@@ -139,7 +139,7 @@ def get_parser(parser_type):
             '-t', dest='type', default='spot', choices=TRADING_TYPE,
             help='Valid trading types: {}'.format(TRADING_TYPE))
 
-    if parser_type == 'klines':
+    if parser_type in ['klines', 'premiumIndexKlines', 'markPriceKlines', 'indexPriceKlines']:
         parser.add_argument(
             '-i', dest='intervals', default=INTERVALS, nargs='+', choices=INTERVALS,
             help='single kline interval or multiple intervals separated by space\n-i 1m 1w means to download klines interval of 1minute and 1week')
